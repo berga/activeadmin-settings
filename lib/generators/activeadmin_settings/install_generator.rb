@@ -30,7 +30,7 @@ module ActiveadminSettings
           prepend_to_file "app/assets/stylesheets/active_admin.css.scss",
                             "//= require activeadmin_settings\n"
         else
-          puts "It doesn't look like you've installed activeadmin: active_admin.scss is missing.\nPlease install it and try again."
+          puts "It doesn't look like you've installed activeadmin: active_admin.css.scss is missing.\nPlease install it and try again."
         end
       end
     end

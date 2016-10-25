@@ -1,8 +1,10 @@
 ## activeadmin-settings
 
-**IN DEVELOPMENT**
+**DEPRECATED**
 
-**TODO**: use yaml file only for settings synchronisation, all settings should be stored in db with all those default values and other meta.
+This gem is not supported and developed anymore.
+
+--
 
 Easy to use general purpose settings backend for activeadmin.
 
@@ -94,6 +96,28 @@ To add some settings go to `config/activeadmin_settings.yml`. Settings are split
         type:           text
         description:    Website description is used as value for header meta tag on homepage
         default_value:  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+All of the settings may be cplitted to groupes by adding optional param `group`, e.g.:
+
+    Site Wide:
+      Title:
+        type:           text
+        description:    Website Title
+        group:          Slider
+      Image1:
+        type:           file
+        group:          Slider
+      Copyright:
+        type:           text
+        description:    eg. (c) 2015
+        group:          Footer
+      FooterLogo:
+        type:           file
+        group:          Footer
+
+As result we'll see:
+
+![ActiveadminSettings Group Example](https://raw.github.com/slate-studio/activeadmin-settings/master/img/activeadmin-group-example.png)
 
 There are a few types of settings:
 

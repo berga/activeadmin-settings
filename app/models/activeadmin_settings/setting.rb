@@ -37,6 +37,10 @@ module ActiveadminSettings
       (ActiveadminSettings.all_settings[name]["description"] ||= "").to_s
     end
 
+    def group
+      (ActiveadminSettings.all_settings[name]["group"] ||= "").to_s
+    end
+
     def default_value(locale = nil)
       locale ||= self[:locale] || I18n.default_locale
       default_value = ActiveadminSettings.all_settings[name]["default_value"]
@@ -92,7 +96,7 @@ module ActiveadminSettings
       end
 
       def self.value(name, locale)
-        find_or_create_by_name_and_locale(name, (locale || I18n.locale)).value
+        find_or_create_by(:name => name, :locale => (locale || I18n.locale)).value
       end
     end
   end
